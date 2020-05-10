@@ -1,2 +1,2 @@
 ## Chasing words game
-test1
+test2
