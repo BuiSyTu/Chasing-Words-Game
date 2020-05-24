@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/game_play_background">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="54dp"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/satcat" />
+
+        <LinearLayout
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginBottom="20dp"
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="Kết Thúc"
+                android:textColor="#0AD5EF"
+                android:textSize="45sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Số điểm:"
+                android:textColor="#0AD5EF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Vàng: "
+                android:textColor="#0AD5EF"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+
+        <Button
+            android:textColor="#000"
+            android:textSize="24dp"
+            android:id="@+id/buttonBack"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/next"
+            android:text="Trở về" />
+    </RelativeLayout>
+
+</TableLayout>
