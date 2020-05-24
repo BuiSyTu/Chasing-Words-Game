@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Chasing words game</string>
+    <string name="default_coin">0</string>
+    <string name="default_heart">5</string>
 </resources>
