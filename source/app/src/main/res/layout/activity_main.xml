@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,91 +11,83 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:padding="20dp">
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/avatar_icon"
-            android:id="@+id/image_avatar"
-            />
-        <!--Avartar-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/heart"
-            android:id="@+id/txt_avatar"
-            android:text="5"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_alignEnd="@id/image_avatar"
-            android:layout_alignRight="@id/image_avatar" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/coin_icon"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:text="5"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:id="@+id/txt_coin" />
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:gravity="center"
-        android:id="@+id/layout_2"
-        android:orientation="horizontal">
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:gravity="center"
-        android:padding="25dp"
-        android:orientation="vertical">
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/logo" />
+
         <LinearLayout
+            android:layout_marginTop="310dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/layout_buton"
-            android:orientation="horizontal"
-            android:visibility="invisible">
+            android:layout_height="match_parent">
+            <Button
+                android:layout_marginBottom="5dp"
+                android:textColor="#000"
+                android:id="@+id/buttonPlay"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/next"
+                android:text="Chơi"
+                android:textSize="24sp" />
+
+            <Button
+                android:layout_marginBottom="5dp"
+                android:textColor="#000"
+                android:id="@+id/buttonHighscore"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/next"
+                android:text="Điểm cao"
+                android:textSize="24sp" />
+
+            <Button
+                android:layout_marginBottom="5dp"
+                android:textColor="#000"
+                android:id="@+id/buttonHelp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/next"
+                android:text="Trợ giúp"
+                android:textSize="24sp" />
+
+            <Button
+                android:layout_marginBottom="5dp"
+                android:textColor="#000"
+                android:id="@+id/buttonExit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/next"
+                android:text="Thoát"
+                android:textSize="24sp" />
         </LinearLayout>
+
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#fff"
-            android:id="@+id/txt_ketQua"/>
-        <LinearLayout
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_3"
+            android:layout_height="91dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:gravity="center"
-            android:orientation="horizontal"></LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/layout_4"
-            android:orientation="horizontal"></LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/layout_5"
-            android:orientation="horizontal"></LinearLayout>
-    </LinearLayout>
+            android:text="Mạng không dây và phát triển ứng dụng di động"
+            android:textColor="#1AB120"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
 </TableLayout>
