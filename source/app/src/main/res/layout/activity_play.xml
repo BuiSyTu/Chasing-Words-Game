@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="20dp">
+        android:padding="12dp">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,9 +20,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/heart"
             android:id="@+id/txt_avatar"
-            android:text="1"
-            android:textSize="25sp"
-            android:textColor="#000"
+            android:text="3"
+            android:textSize="22sp"
+            android:textColor="#fff"
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:layout_alignEnd="@id/image_avatar"
@@ -32,11 +32,18 @@
             android:layout_height="wrap_content"
             android:background="@drawable/coin_icon"
             android:layout_alignParentRight="true"
-            android:text="5"
-            android:textSize="20sp"
+            android:text="0"
+            android:textSize="22sp"
             android:gravity="center"
             android:textColor="#fff"
             android:id="@+id/txt_coin" />
+        <Button
+            android:id="@+id/buttonSuggest"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/question" />
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"

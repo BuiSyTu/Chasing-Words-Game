@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EndActivity" android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        </activity>
+        <activity android:name=".HelpActivity"  android:theme="@style/Theme.AppCompat.NoActionBar" ></activity>
+        <activity android:name=".HighScoreActivity"  android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".EndActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".PlayActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

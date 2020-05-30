@@ -43,7 +43,7 @@
                 android:textSize="45sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textViewCountCorrect"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Số điểm:"
@@ -51,7 +51,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewCoin"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Vàng: "

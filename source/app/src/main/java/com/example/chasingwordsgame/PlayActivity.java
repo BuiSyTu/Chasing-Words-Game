@@ -19,6 +19,8 @@ import java.util.Random;
 
 public class PlayActivity extends AppCompatActivity implements View.OnClickListener {
 
+    Database database;
+
     private TextView txtCoin;
     private TextView txtHeart;
     private TextView txtResult;
@@ -28,12 +30,15 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout layoutImage;
     private LinearLayout layoutButton;
     private Button btnChoose;
+    private Button btnSuggest;
 
     private int coin = 0;
-    private int heart = 1;
+    private int heart = 3;
     private int i = 0;
     private int dem = 0;
     private  boolean isCorrect = false;
+    private int countCorrect = 0;
+    private ArrayList<CharSequence> lastTexts = new ArrayList<>();
 
     private final String[] DAP_AN ={
             "HOIDONG",
@@ -77,23 +82,27 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     private Random random = new Random();
     private String result = "";
     private Button[] btnResults;
+    Button btnResult;
+    Button btnToBack;
     private int rd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
-        initText();
+        init();
         rd = random();
         createButton();
         createImage();
         createButtonPick();
+
+
     }
 
-    public void initText() {
-        txtCoin= (TextView) findViewById(R.id.txt_coin);
-        txtHeart = (TextView) findViewById(R.id.txt_avatar);
-        txtResult = (TextView) findViewById(R.id.txt_ketQua);
+    public void init() {
+        txtCoin= findViewById(R.id.txt_coin);
+        txtHeart = findViewById(R.id.txt_avatar);
+        txtResult = findViewById(R.id.txt_ketQua);
     }
 
     public boolean check(ArrayList<Integer> numbers, int n){
@@ -188,6 +197,17 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             }
             layout5.addView(btn);
         }
+
+        btnSuggest = findViewById(R.id.buttonSuggest);
+        btnSuggest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnResults[i].setText(DAP_AN[rd].charAt(i) + "");
+                result += DAP_AN[rd].charAt(i);
+                i++;
+                dem++;
+            }
+        });
     }
 
     @SuppressLint("ResourceType")
@@ -216,7 +236,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                     dem=0;
                     i=0;
                 } else {
-                    heart -= 1;
                     txtHeart.setText(heart + "");
                     layout4.removeAllViews();
                     layout5.removeAllViews();
@@ -234,15 +253,17 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         layoutButton.addView(btnChoose);
+
     }
 
     @Override
     public void onClick(View v) {
-        checkHeart();
         Button button = (Button) v;
         btnResults[i].setText(button.getText());
+        lastTexts.add(button.getText());
         result += button.getText();
         v.setEnabled(false);
+        btnToBack = (Button) v;
         v.setBackgroundColor(601800);
         ((Button) v).setText("");
         dem++;
@@ -257,11 +278,14 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 createButtonChoose();
                 btnChoose.setText("NEXT");
                 layoutButton.setVisibility(View.VISIBLE);
+                countCorrect++;
                 return;
             } else {
                 for (int i = 0; i < DAP_AN[rd].length(); i++) {
                     btnResults[i].setBackgroundResource(R.drawable.tile_false);
                 }
+                heart -= 1;
+                checkHeart();
                 txtResult.setText("Bạn đã trả lời sai !!!");
                 isCorrect = false;
                 createButtonChoose();
@@ -270,14 +294,37 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 return;
             }
         }
-
+//        Toast.makeText(this,DAP_AN[rd].charAt(i) + "",Toast.LENGTH_LONG).show();
+        btnResult = findViewById(i);
+        btnResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(PlayActivity.this, i + "", Toast.LENGTH_SHORT).show();
+                btnResult.setText("");
+                btnToBack.setEnabled(true);
+                btnToBack.setBackgroundResource(R.drawable.tile_hover);
+                btnToBack.setText(lastTexts.get(lastTexts.size() - 1));
+                result = result.substring(0, result.length() - 1);
+                lastTexts.remove(lastTexts.size() - 1);
+                i--;
+                dem--;
+            }
+        });
         i++;
+
     }
 
     public void checkHeart() {
         if (heart == 0){
+            Database database = new Database(this, "dhbc.sqlite", null, 1);
+
+            database.QueryData("Insert into Result values(null, 'player', "+ coin  + ")");
+
             Intent intent = new Intent(PlayActivity.this, EndActivity.class);
+            intent.putExtra("coin", coin);
+            intent.putExtra("countCorrect", countCorrect);
             startActivity(intent);
+            return;
         }
     }
 
