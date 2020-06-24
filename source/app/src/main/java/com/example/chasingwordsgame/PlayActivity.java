@@ -59,6 +59,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             "MASAT",
             "HONGTAM"
     };
+    
     public static final int[] QUESTIONS={
             R.drawable.hoidong,
             R.drawable.aomua,
@@ -95,8 +96,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         createButton();
         createImage();
         createButtonPick();
-
-
     }
 
     public void init() {
@@ -253,7 +252,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         layoutButton.addView(btnChoose);
-
     }
 
     @Override
@@ -311,7 +309,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         i++;
-
     }
 
     public void checkHeart() {
